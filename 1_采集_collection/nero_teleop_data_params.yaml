@@ -1,0 +1,63 @@
+/**:
+  ros__parameters:
+    dataInfo:
+      useSensorTimeStamp: false
+
+      camera:
+        color:
+          names:
+            - "cam_high"
+            - "cam_right_wrist"
+          parentFrames:
+            - "cam_high"
+            - "cam_right_wrist"
+          topics:
+            - "/cam_high/image_raw"
+            - "/cam_right_wrist/image_raw"
+          configTopics:
+            - "/cam_high/camera_info"
+            - "/cam_right_wrist/camera_info"
+          types:
+            - "sensor_msgs/msg/Image"
+            - "sensor_msgs/msg/Image"
+
+      localization:
+        pose:
+          names:
+            - "right_tcp"
+          topics:
+            - "/right_arm/feedback/tcp_pose"
+          configTopics:
+            - ""
+          types:
+            - "geometry_msgs/msg/PoseStamped"
+
+      arm:
+        jointState:
+          names:
+            - "masterRight"
+            - "puppetRight"
+          topics:
+            - "/right_arm/control/joint_states"
+            - "/right_arm/feedback/joint_states"
+          configTopics:
+            - ""
+            - ""
+          types:
+            - "sensor_msgs/msg/JointState"
+            - "sensor_msgs/msg/JointState"
+
+      gripper:
+        encoder:
+          names:
+            - "masterRightGripper"
+            - "puppetRightGripper"
+          topics:
+            - "/right_arm/control/gripper"
+            - "/right_arm/feedback/gripper_encoder"
+          configTopics:
+            - ""
+            - ""
+          types:
+            - "data_msgs/msg/Gripper"
+            - "data_msgs/msg/Gripper"
